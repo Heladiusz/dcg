@@ -1,24 +1,29 @@
 let count = 0;
-const countElement = document.querySelector('count');
-const addDonutbutton = document.querySelector('add-donut')
+const countElement = document.getElementById("count");
+const addDonutbutton = document.getElementById("add-donut");
 
-let autoClickerCount= 0;
-const autoClickerElement = document.querySelector('auto-clicker');
-const purchaseAutoClickerButton = document.querySelector('purchase-auto-clicker');
-const activateAutoClickersButton = document.querySelector('activate-auto-clickers');
+let autoClickerCount = 0;
+const autoClickerElement = document.getElementById("auto-clicker");
+const purchaseAutoClickerButton = document.getElementById(
+  "purchase-auto-clicker"
+);
+const activateAutoClickersButton = document.getElementById(
+  "activate-auto-clickers"
+);
+const stopAutoClickersButton = document.getElementById("stop-auto-clickers");
 
 let autoClickerCost = 100;
 let autoClickerInterval;
 
-//function to increment donut count 
-const incrementCount =() =>{
+//function to increment donut count
+const incrementCount = () => {
   count++;
   countElement.textContent = count;
-};
+}
 
 //function to purchase auto clicker
 const purchaseAutoClicker = () => {
-  if ( count >= autoClickerCost){
+  if (count >= autoClickerCost) {
     count -= autoClickerCost;
     autoClickerCount++;
     countElement.textContent = count;
@@ -28,3 +33,26 @@ const purchaseAutoClicker = () => {
     purchaseAutoClickerButton.textContent = `Purchase Auto Clicker (${autoClickerCost} donuts)`;
   }
 };
+
+const activateAutoClickers = () => {
+  autoClickerInterval = setInterval(() => {
+    count += autoClickerCount;
+    countElement.textContent = count;
+  }, 1000);
+
+  //stop the auto clickers after a certain period
+  setTimeout(() => {
+    stopAutoClickers();
+  }, 1000);
+};
+
+//function to stop auto clickers
+const stopAutoClickers = () => {
+  clearInterval(autoClickerInterval);
+};
+
+//add event listeners
+addDonutbutton.addEventListener("click", incrementCount);
+purchaseAutoClickerButton.addEventListener("click", purchaseAutoClicker);
+activateAutoClickersButton.addEventListener("click", activateAutoClickers);
+stopAutoClickersButton.addEventListener("click", stopAutoClickers);
