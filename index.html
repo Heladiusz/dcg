@@ -8,20 +8,66 @@
     <title>Donut Clicker</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1 class="title">Fred the Baker Baking Company</h1>
-        <nav>
-          <ul>
-            <li><a href="#home">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#contact">contact</a></li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+    <header>
+      <!--heading for the game-->
+      <h1>Donut Maker</h1>
+      <h3>Welcome to Fred the Baker Baking Company. Time to make donuts!</h3>
+
+      <!--navigation menu-->
+      <nav>
+        <ul>
+          <li><a href="#" onclick="openModal('about')">About</a></li>
+          <li>
+            <a href="#" onclick="openModal('inspiration')">Inspiration</a>
+          </li>
+          <li><a href="#" onclick="openModal('contact')">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Modal for home-->
+      <div class="modal" id="aboutModal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('about')">&times;</span>
+          <h2>About</h2>
+          <p>Info About Fred the baker</p>
+        </div>
+      </div>
+
+      <!-- modal for inspiration-->
+      <div class="modal" id="inspirationModal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('inspiration')">&times;</span>
+          <h2>Inspiration</h2>
+          <p>
+            This game, Donut maker draws inspiration from the popular cookie
+            clicker game
+          </p>
+          <a href="https://orteil.dashnet.org/cookieclicker/">
+            <p>Cookie Clicker</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- modal for contact-->
+      <div class="modal" id="contactModal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('contact')">&times;</span>
+          <h2>Contact</h2>
+          <p>
+            My name is Eladio Colon a new upcoming software developer student
+            from Philadelphia,Pennsylvania
+          </p>
+          <br />
+          <a href="https://heladiusz.github.io/" target="_blank">Portfolio</a>
+          <br />
+          <br />
+          <a href="https://github.com/Heladiusz" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </header>
+
     <main>
-      <button id="add-donut">Add Donut</button>
+      <img src="image/donut.png" id="donutButton" name="donutButton" class="donutButton" />
       <p id="donut-count">Donut count: <span id="count">0</span></p>
       <section class="display">
         <button id="purchase-auto-clicker">Purchase Auto Clicker</button>
@@ -31,6 +77,10 @@
         <button id="activate-auto-clickers">Activate Auto Clickers</button>
         <button id="stop-auto-clickers">Stop Auto Clickers</button>
       </section>
+
+      <!--reset game button-->
+      <button id="reset-game-button">Reset</button>
+
       <script src="donutmaker.js"></script>
     </main>
   </body>
