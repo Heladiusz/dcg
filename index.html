@@ -29,7 +29,15 @@
         <div class="modal-content">
           <span class="close" onclick="closeModal('about')">&times;</span>
           <h2>About</h2>
-          <p>Info About Fred the baker</p>
+          <p>
+            You have been contracted by Fred the Baker Baking Company to take a
+            concept, Donut Maker Clicker, from the drawing board to the browser.
+            Fred the Baker is tired of making real donuts and is ready to
+            retire. He needs our help to keep his love of donuts alive. He wants
+            you to create a game that uses button clicks to create virtual
+            donuts for the world to enjoy. It's always "Time to make the Donuts"
+            and Fred is too busy to give us guidance
+          </p>
         </div>
       </div>
 
@@ -67,7 +75,12 @@
     </header>
 
     <main>
-      <img src="image/donut.png" id="donutButton" name="donutButton" class="donutButton" />
+      <img
+        src="image/donut.png"
+        id="donutButton"
+        name="donutButton"
+        class="donutButton"
+      />
       <p id="donut-count">Donut count: <span id="count">0</span></p>
       <section class="display">
         <button id="purchase-auto-clicker">Purchase Auto Clicker</button>
@@ -76,6 +89,10 @@
         </p>
         <button id="activate-auto-clickers">Activate Auto Clickers</button>
         <button id="stop-auto-clickers">Stop Auto Clickers</button>
+
+        <button id="buyMultiplierButton">Buy Multiplier</button>
+        <p>Multiplier Cost: <span id="multiplierCost">10</span></p>
+        <p>Multiplier Value: <span id="multiplierValue">1</span></p>
       </section>
 
       <!--reset game button-->

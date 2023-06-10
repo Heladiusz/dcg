@@ -70,11 +70,34 @@ const stopAutoClickers = () => {
   autoClickerInterval = null;
 };
 
+// function to purchase multiplier
+const buyMultiplier = () => {
+  if (count >= multiplierCost) {
+    count -= multiplierCost;
+    multiplierValue++;
+    multiplierCost *= 2;
+    updateMultiplierUI();
+  }
+};
+
+const buyMultiplierButton = document.getElementById("buyMultiplierButton");
+const multiplierCostElement = document.getElementById("multiplierCost");
+const multiplierValueElement = document.getElementById("multiplierValue");
+
+let multiplierCost = 10;
+let multiplierValue = 1;
+
+const updateMultiplierUI = () => {
+  multiplierCostElement.textContent = multiplierCost;
+  multiplierValueElement.textContent = multiplierValue;
+};
+
 // add event listeners
 donutButton.addEventListener("click", incrementCount);
 purchaseAutoClickerButton.addEventListener("click", purchaseAutoClicker);
 activateAutoClickersButton.addEventListener("click", activateAutoClickers);
 stopAutoClickersButton.addEventListener("click", stopAutoClickers);
+buyMultiplierButton.addEventListener("click", buyMultiplier);
 
 // resets the game - reload page
 const resetGame = () => {
