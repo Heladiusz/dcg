@@ -80,6 +80,7 @@ const buyMultiplier = () => {
   }
 };
 
+
 const buyMultiplierButton = document.getElementById("buyMultiplierButton");
 const multiplierCostElement = document.getElementById("multiplierCost");
 const multiplierValueElement = document.getElementById("multiplierValue");
